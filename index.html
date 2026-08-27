@@ -1,216 +1,1078 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crodyto | Innovative IT Startup</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Crodyto HR | Offer Letter Generator</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- Navigation Bar -->
-    <header id="navbar">
-        <div class="logo">Crodyto<span>.</span></div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#services">Services</a>
-            <a href="#process">Process</a>
-            <a href="#contact" class="nav-btn">Contact Us</a>
-        </nav>
-    </header>
 
-    <!-- Hero Landing Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Innovate. Build. Scale.</h1>
-            <p>A fast-growing IT startup empowering businesses with next-generation web, software, and digital solutions.</p>
-            <div class="hero-buttons">
-                <a href="#services" class="btn btn-outline">Explore Services</a>
-                <a href="#contact" class="btn btn-primary">Start a Project</a>
-            </div>
+  <!-- =========================
+       PASSWORD LOCK SCREEN
+  ========================== -->
+  <div id="lockScreen" class="lock-screen">
+
+    <div class="lock-box">
+
+      <img
+        src="logo.png"
+        alt="Crodyto Logo"
+        class="lock-logo"
+      >
+
+      <h1>Crodyto HR</h1>
+
+      <p>Offer Letter Generator</p>
+
+      <div class="lock-icon">🔒</div>
+
+      <h2>Software Locked</h2>
+
+      <span>
+        Enter the authorized password to continue
+      </span>
+
+      <input
+        type="password"
+        id="passwordInput"
+        placeholder="Enter password"
+        autocomplete="off"
+      >
+
+      <button
+        type="button"
+        id="unlockBtn"
+      >
+        Unlock Software
+      </button>
+
+      <p id="passwordError"></p>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       TOPBAR
+  ========================== -->
+
+  <header class="topbar">
+
+    <div class="brand">
+
+      <img
+        src="logo.png"
+        alt="Crodyto Logo"
+        class="top-logo"
+      >
+
+      <div>
+        <h2>Crodyto</h2>
+
+        <span>
+          HR Management • Offer Letter Generator
+        </span>
+      </div>
+
+    </div>
+
+
+    <div class="dashboard-badge">
+      ● HR Dashboard
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       MAIN APP
+  ========================== -->
+
+  <main class="app-layout">
+
+
+    <!-- =========================
+         FORM PANEL
+    ========================== -->
+
+    <section class="form-panel">
+
+      <div class="panel-header">
+
+        <h2>Create Offer Letter</h2>
+
+        <p>
+          Fill in the candidate and employment details.
+        </p>
+
+      </div>
+
+
+      <!-- CANDIDATE INFORMATION -->
+
+      <div class="form-section">
+
+        <h3>👤 Candidate Information</h3>
+
+
+        <div class="form-group">
+
+          <label>Full Name *</label>
+
+          <input
+            type="text"
+            id="name"
+            placeholder="Enter candidate's full name"
+          >
+
         </div>
+
+
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label>Email Address</label>
+
+            <input
+              type="email"
+              id="email"
+              placeholder="candidate@email.com"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>Phone Number</label>
+
+            <input
+              type="text"
+              id="phone"
+              placeholder="+91 XXXXX XXXXX"
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>Offer Date</label>
+
+          <input
+            type="date"
+            id="offerDate"
+          >
+
+        </div>
+
+      </div>
+
+
+      <!-- JOB INFORMATION -->
+
+      <div class="form-section">
+
+        <h3>💼 Job Information</h3>
+
+
+        <div class="form-group">
+
+          <label>Job Position *</label>
+
+          <input
+            type="text"
+            id="position"
+            placeholder="Frontend Developer Intern"
+          >
+
+        </div>
+
+
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label>Department</label>
+
+            <input
+              type="text"
+              id="department"
+              placeholder="Engineering"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>Employment Type</label>
+
+            <select id="employmentType">
+
+              <option value="Internship">
+                Internship
+              </option>
+
+              <option value="Full-Time">
+                Full-Time
+              </option>
+
+              <option value="Part-Time">
+                Part-Time
+              </option>
+
+              <option value="Contract">
+                Contract
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <!-- PAYMENT -->
+
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label>Payment Type</label>
+
+            <select id="paymentType">
+
+              <option value="Paid">
+                Paid
+              </option>
+
+              <option value="Unpaid">
+                Unpaid
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>Salary / Stipend</label>
+
+            <input
+              type="text"
+              id="salary"
+              placeholder="₹10,000 per month"
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label>Joining Date</label>
+
+            <input
+              type="date"
+              id="joiningDate"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>Duration / Probation</label>
+
+            <input
+              type="text"
+              id="duration"
+              placeholder="3 Months"
+            >
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- WORK INFORMATION -->
+
+      <div class="form-section">
+
+        <h3>🏢 Work Information</h3>
+
+
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label>Work Mode</label>
+
+            <select id="workMode">
+
+              <option value="Remote">
+                Remote
+              </option>
+
+              <option value="On-site">
+                On-site
+              </option>
+
+              <option value="Hybrid">
+                Hybrid
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>Work Location</label>
+
+            <input
+              type="text"
+              id="location"
+              placeholder="Siliguri / Remote"
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label>Working Hours</label>
+
+            <input
+              type="text"
+              id="workingHours"
+              placeholder="10:00 AM - 6:00 PM"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>Working Days</label>
+
+            <input
+              type="text"
+              id="workingDays"
+              placeholder="Monday - Friday"
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>Reporting To</label>
+
+          <input
+            type="text"
+            id="reportingManager"
+            placeholder="Team Lead / Manager"
+          >
+
+        </div>
+
+      </div>
+
+
+      <!-- EMPLOYMENT CONDITIONS -->
+
+      <div class="form-section">
+
+        <h3>📋 Employment Conditions</h3>
+
+
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label>Notice Period</label>
+
+            <input
+              type="text"
+              id="noticePeriod"
+              placeholder="15 Days"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>Offer Valid Until</label>
+
+            <input
+              type="date"
+              id="validUntil"
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>Additional Terms</label>
+
+          <textarea
+            id="customTerms"
+            rows="5"
+            placeholder="Add any special conditions..."
+          ></textarea>
+
+        </div>
+
+      </div>
+
+
+      <!-- HR AUTHORIZATION -->
+
+      <div class="form-section">
+
+        <h3>✍️ HR Authorization</h3>
+
+
+        <div class="form-group">
+
+          <label>HR / Authorized Person Name</label>
+
+          <input
+            type="text"
+            id="hrName"
+            placeholder="Authorized Person"
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>Designation</label>
+
+          <input
+            type="text"
+            id="hrDesignation"
+            placeholder="HR Manager / Founder"
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>Upload HR Signature</label>
+
+          <input
+            type="file"
+            id="signatureUpload"
+            accept="image/*"
+          >
+
+        </div>
+
+      </div>
+
+
+      <!-- BUTTONS -->
+
+      <div class="button-group">
+
+        <button
+          type="button"
+          class="generate-btn"
+          id="generateBtn"
+        >
+          Generate Offer Letter
+        </button>
+
+
+        <button
+          type="button"
+          class="clear-btn"
+          id="clearBtn"
+        >
+          Clear
+        </button>
+
+      </div>
+
     </section>
 
-    <!-- Detailed About Section (Updated for Startup) -->
-    <section id="about" class="about">
-        <div class="about-container">
-            <div class="about-text">
-                <h4 class="section-subtitle">Who We Are</h4>
-                <h2>Your Technology Growth Partner</h2>
-                <p><strong>Crodyto</strong> is an innovative and agile IT startup driven by a passion for technology. We understand that every business is unique, which is why we deliver custom-tailored digital solutions. From scalable web development to AI integration, we bring fresh ideas and modern tech stacks to help your business grow faster.</p>
-                
-                <div class="mission-vision">
-                    <div class="mv-box">
-                        <i class="fa-solid fa-bullseye"></i>
-                        <div>
-                            <h3>Our Mission</h3>
-                            <p>To provide high-quality, cost-effective, and scalable digital solutions that help businesses thrive in the modern tech landscape.</p>
-                        </div>
-                    </div>
-                    <div class="mv-box">
-                        <i class="fa-solid fa-rocket"></i>
-                        <div>
-                            <h3>Our Vision</h3>
-                            <p>To grow into a globally recognized tech company by building trust, delivering excellence, and constantly innovating.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Crodyto Startup Team">
-            </div>
+
+
+    <!-- =========================
+         PREVIEW PANEL
+    ========================== -->
+
+    <section class="preview-panel">
+
+
+      <div class="preview-header">
+
+        <div>
+
+          <h2>Offer Letter Preview</h2>
+
+          <p>
+            Professional two-page document
+          </p>
+
         </div>
-        
-        <!-- Updated Stats for Startup -->
-        <div class="stats-container">
-            <div class="stat-box"><i class="fa-solid fa-bolt"></i><h3>Agile</h3><p>Development Approach</p></div>
-            <div class="stat-box"><i class="fa-solid fa-laptop-code"></i><h3>Modern</h3><p>Tech Stack</p></div>
-            <div class="stat-box"><i class="fa-solid fa-handshake"></i><h3>100%</h3><p>Client Dedication</p></div>
-            <div class="stat-box"><i class="fa-solid fa-headset"></i><h3>24/7</h3><p>Ongoing Support</p></div>
+
+
+        <button
+          type="button"
+          class="print-btn"
+          id="printBtn"
+        >
+          🖨 Print / Save PDF
+        </button>
+
+      </div>
+
+
+
+      <!-- =========================
+           PAGE 1
+      ========================== -->
+
+      <article class="offer-page">
+
+
+        <div class="letter-header">
+
+          <img
+            src="logo.png"
+            alt="Crodyto"
+            class="letter-logo"
+          >
+
+
+          <div class="company-meta">
+
+            <strong>CRODYTO</strong>
+
+            <span>
+              IT Services & IT Consulting
+            </span>
+
+          </div>
+
         </div>
+
+
+        <div class="blue-line"></div>
+
+
+        <div class="offer-meta">
+
+          <div>
+
+            <span>Offer Letter ID</span>
+
+            <strong id="offerId">
+              CRO-0000
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>Date of Issue</span>
+
+            <strong id="previewOfferDate">
+              —
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <h1 class="letter-title">
+          OFFER LETTER
+        </h1>
+
+
+        <p>
+          Date:
+          <strong id="letterDate">—</strong>
+        </p>
+
+
+        <p>
+          Dear
+          <strong id="previewName">
+            Candidate
+          </strong>,
+        </p>
+
+
+        <p>
+          We are pleased to offer you the position of
+          <strong id="previewPosition">—</strong>
+          with <strong>Crodyto</strong>.
+        </p>
+
+
+        <p>
+          You will be joining the
+          <strong id="previewDepartment">—</strong>
+          department as a
+          <strong id="previewEmploymentType">—</strong>.
+        </p>
+
+
+
+        <!-- EMPLOYMENT SUMMARY -->
+
+        <div class="summary-box">
+
+          <h3>
+            Employment Summary
+          </h3>
+
+
+          <div class="summary-grid">
+
+
+            <div>
+
+              <span>Position</span>
+
+              <strong id="summaryPosition">
+                —
+              </strong>
+
+            </div>
+
+
+            <div>
+
+              <span>Employment Type</span>
+
+              <strong id="summaryEmployment">
+                —
+              </strong>
+
+            </div>
+
+
+            <div>
+
+              <span>Department</span>
+
+              <strong id="summaryDepartment">
+                —
+              </strong>
+
+            </div>
+
+
+            <div>
+
+              <span>Compensation</span>
+
+              <strong id="summarySalary">
+                —
+              </strong>
+
+            </div>
+
+
+            <div>
+
+              <span>Joining Date</span>
+
+              <strong id="summaryJoining">
+                —
+              </strong>
+
+            </div>
+
+
+            <div>
+
+              <span>Duration / Probation</span>
+
+              <strong id="summaryDuration">
+                —
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <h3 class="section-title">
+          1. Employment & Compensation
+        </h3>
+
+
+        <p>
+          Your engagement with Crodyto will begin on
+          <strong id="textJoiningDate">—</strong>.
+          Your employment category will be
+          <strong id="textEmploymentType">—</strong>.
+        </p>
+
+
+        <p id="paymentParagraph">
+          Compensation details will be mentioned according to the agreed
+          employment terms.
+        </p>
+
+
+        <h3 class="section-title">
+          2. Work Responsibilities
+        </h3>
+
+
+        <p>
+          You will be responsible for completing assigned tasks,
+          communicating professionally with the team, maintaining deadlines,
+          and following instructions from your reporting manager.
+        </p>
+
+
+        <p>
+          You will report directly to
+          <strong id="previewReportingManager">
+            —
+          </strong>.
+        </p>
+
+
+        <div class="page-footer">
+
+          <span>
+            Crodyto • Confidential
+          </span>
+
+          <span>
+            Page 1 of 2
+          </span>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- =========================
+           PAGE 2
+      ========================== -->
+
+      <article class="offer-page second-page">
+
+
+        <div class="letter-header">
+
+          <img
+            src="logo.png"
+            alt="Crodyto"
+            class="letter-logo"
+          >
+
+
+          <div class="company-meta">
+
+            <strong>CRODYTO</strong>
+
+            <span>
+              IT Services & IT Consulting
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="blue-line"></div>
+
+
+        <h3 class="section-title">
+          3. Working Schedule & Location
+        </h3>
+
+
+        <div class="details-table">
+
+
+          <div class="table-row">
+
+            <span>Work Mode</span>
+
+            <strong id="detailWorkMode">
+              —
+            </strong>
+
+          </div>
+
+
+          <div class="table-row">
+
+            <span>Work Location</span>
+
+            <strong id="detailLocation">
+              —
+            </strong>
+
+          </div>
+
+
+          <div class="table-row">
+
+            <span>Working Hours</span>
+
+            <strong id="detailWorkingHours">
+              —
+            </strong>
+
+          </div>
+
+
+          <div class="table-row">
+
+            <span>Working Days</span>
+
+            <strong id="detailWorkingDays">
+              —
+            </strong>
+
+          </div>
+
+
+          <div class="table-row">
+
+            <span>Notice Period</span>
+
+            <strong id="detailNoticePeriod">
+              —
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <h3 class="section-title">
+          4. Confidentiality & Company Property
+        </h3>
+
+
+        <p>
+          During your association with Crodyto, you may receive access to
+          confidential information including client information, source code,
+          project files, business documents, credentials, internal systems,
+          and other company resources.
+        </p>
+
+
+        <p>
+          Such information must not be copied, shared, published, or used for
+          personal or third-party purposes without written authorization.
+          All company property and confidential materials must be returned
+          when your employment or engagement ends.
+        </p>
+
+
+        <h3 class="section-title">
+          5. Code of Conduct
+        </h3>
+
+
+        <p>
+          You are expected to maintain professional behaviour, respect
+          colleagues and clients, communicate appropriately, protect company
+          information, and follow Crodyto's policies and reasonable
+          instructions.
+        </p>
+
+
+        <p>
+          Misconduct, repeated negligence, breach of confidentiality,
+          unauthorized use of company resources, or violation of company
+          policies may result in disciplinary action or termination.
+        </p>
+
+
+        <h3 class="section-title">
+          6. Performance & Termination
+        </h3>
+
+
+        <p>
+          Your performance may be reviewed based on work quality,
+          communication, discipline, responsibility, attendance, and
+          contribution to assigned projects.
+        </p>
+
+
+        <p>
+          The applicable notice period for this role is
+          <strong id="previewNoticePeriod">
+            —
+          </strong>.
+        </p>
+
+
+
+        <!-- ADDITIONAL TERMS -->
+
+        <div class="custom-terms">
+
+          <h3>
+            7. Additional Terms
+          </h3>
+
+
+          <p id="previewCustomTerms">
+            No additional terms have been specified.
+          </p>
+
+        </div>
+
+
+
+        <h3 class="section-title">
+          8. Acceptance of Offer
+        </h3>
+
+
+        <p>
+          By accepting this offer, you confirm that you have read,
+          understood, and agreed to the terms and conditions mentioned in
+          this offer letter.
+        </p>
+
+
+
+        <!-- SIGNATURE AREA -->
+
+        <div class="signature-area">
+
+
+          <!-- Candidate -->
+
+          <div class="signature-block">
+
+            <div class="signature-space"></div>
+
+            <div class="signature-line"></div>
+
+            <strong id="candidateNameSignature">
+              Candidate Name
+            </strong>
+
+            <span>
+              Candidate Signature & Date
+            </span>
+
+          </div>
+
+
+
+          <!-- HR -->
+
+          <div class="signature-block">
+
+            <div class="signature-image-box">
+
+              <img
+                id="signaturePreview"
+                src=""
+                alt="HR Signature"
+              >
+
+            </div>
+
+
+            <div class="signature-line"></div>
+
+
+            <strong id="previewHrName">
+              Authorized Person
+            </strong>
+
+
+            <span id="previewHrDesignation">
+              HR / Authorized Representative
+            </span>
+
+
+            <small>
+              For Crodyto
+            </small>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="acceptance-note">
+
+          This offer remains valid until
+          <strong id="previewValidUntil">
+            —
+          </strong>.
+
+        </div>
+
+
+
+        <div class="page-footer">
+
+          <span>
+            Crodyto • Confidential
+          </span>
+
+          <span>
+            Page 2 of 2
+          </span>
+
+        </div>
+
+      </article>
+
     </section>
 
-    <!-- Comprehensive Services Section -->
-    <section id="services" class="services">
-        <h4 class="section-subtitle text-center">What We Do</h4>
-        <h2 class="text-center">Our Core Expertise</h2>
-        <div class="service-cards">
-            
-            <div class="card">
-                <i class="fa-solid fa-laptop-code card-icon"></i>
-                <h3>Web Development</h3>
-                <p>Building highly responsive, fast, and secure websites tailored to your brand identity.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-desktop card-icon"></i>
-                <h3>Software Development</h3>
-                <p>Designing robust software solutions that solve complex business challenges efficiently.</p>
-            </div>
-            <div class="card">
-                <i class="fa-brands fa-app-store card-icon"></i>
-                <h3>Application Development</h3>
-                <p>Scalable and high-performing applications built for diverse enterprise platforms.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-pen-nib card-icon"></i>
-                <h3>UI/UX Design</h3>
-                <p>Creating intuitive, user-centric interfaces that drive engagement and conversions.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-mobile-screen card-icon"></i>
-                <h3>Mobile App Development</h3>
-                <p>Native and cross-platform mobile experiences for iOS and Android.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-server card-icon"></i>
-                <h3>Frontend & Backend</h3>
-                <p>End-to-end full-stack development ensuring seamless logic and visual experiences.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-database card-icon"></i>
-                <h3>Database Development</h3>
-                <p>Secure, optimized, and scalable database architectures for your growing data.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-cloud card-icon"></i>
-                <h3>Cloud Solutions</h3>
-                <p>Migration, hosting, and management of secure cloud infrastructures.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-network-wired card-icon"></i>
-                <h3>API Development</h3>
-                <p>Custom APIs and seamless third-party integrations to connect your systems.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-cart-shopping card-icon"></i>
-                <h3>E-commerce Development</h3>
-                <p>High-conversion online stores equipped with secure payment gateways.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-lightbulb card-icon"></i>
-                <h3>Custom Digital Solutions</h3>
-                <p>Unique, tailor-made technological solutions that fit your specific business logic.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-user-tie card-icon"></i>
-                <h3>IT Consulting</h3>
-                <p>Strategic technology advisory to align your tech stack with your business goals.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-cloud-arrow-up card-icon"></i>
-                <h3>SaaS Development</h3>
-                <p>Building powerful Software-as-a-Service platforms for your customers.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-robot card-icon"></i>
-                <h3>AI Solutions</h3>
-                <p>Integrating Artificial Intelligence and Machine Learning to make your apps smarter.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-gears card-icon"></i>
-                <h3>Business Automation</h3>
-                <p>Streamlining daily workflows and eliminating manual tasks for maximum efficiency.</p>
-            </div>
+  </main>
 
-        </div>
-    </section>
 
-    <!-- Work Process Section -->
-    <section id="process" class="process">
-        <h4 class="section-subtitle text-center">How We Work</h4>
-        <h2 class="text-center">Our Startup Methodology</h2>
-        <div class="process-steps">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h3>Brainstorm</h3>
-                <p>We listen to your ideas and understand your unique business needs.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <h3>Design & Plan</h3>
-                <p>Creating wireframes and a clear roadmap for your digital product.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3>Develop</h3>
-                <p>Our team builds your product using the latest and most secure technologies.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">4</div>
-                <h3>Launch & Support</h3>
-                <p>We deploy your project successfully and provide ongoing support as you grow.</p>
-            </div>
-        </div>
-    </section>
+  <script src="script.js"></script>
 
-    <!-- Footer & Contact Section -->
-    <footer id="contact">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h2>Crodyto<span>.</span></h2>
-                <p>An innovative IT startup dedicated to building your digital future. Let's create something amazing together.</p>
-            </div>
-            
-            <div class="footer-contact">
-                <h3>Contact Us</h3>
-                <p><i class="fa-solid fa-envelope"></i> <a href="mailto:crodyto@gmail.com">crodyto@gmail.com</a></p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/company/crodyto" target="_blank" class="linkedin-btn">
-                        <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2026 Crodyto. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
