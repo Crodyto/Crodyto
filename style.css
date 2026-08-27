@@ -45,7 +45,7 @@ header.scrolled {
 }
 
 .logo-img {
-    height: 40px; /* Adjust this to make your logo bigger or smaller */
+    height: 60px; /* Adjust this to make your logo bigger or smaller */
     width: auto;
     transition: 0.3s ease-in-out;
 }
