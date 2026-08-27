@@ -39,11 +39,11 @@ header.scrolled {
 .logo {
     font-size: 28px;
     font-weight: 800;
-    color: #003b73; /* Tech Blue */
+    color: #003b73;
 }
 
 .logo span {
-    color: #00a8cc; /* Accent Blue */
+    color: #00a8cc;
 }
 
 nav a {
@@ -68,7 +68,6 @@ nav a:hover {
     background: linear-gradient(135deg, #003b73 0%, #001a33 100%);
     color: #fff;
     padding: 0 20px;
-    margin-top: 60px;
 }
 
 .hero h1 {
@@ -81,8 +80,7 @@ nav a:hover {
     margin-bottom: 35px;
     color: #d1e8ff;
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 35px auto;
 }
 
 .btn {
@@ -94,12 +92,51 @@ nav a:hover {
     border-radius: 8px;
     font-weight: bold;
     font-size: 1.1rem;
-    transition: background 0.3s, transform 0.2s;
+    transition: 0.3s;
 }
 
 .btn:hover {
     background: #008ba8;
     transform: translateY(-2px);
+}
+
+/* About Section */
+.about {
+    padding: 100px 8%;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    color: #003b73;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    color: #555;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.stat-box {
+    background: #fff;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.stat-box h3 {
+    font-size: 2.5rem;
+    color: #00a8cc;
 }
 
 /* Services Section */
@@ -126,7 +163,7 @@ nav a:hover {
     background: #f8f9fa;
     padding: 40px 30px;
     border-radius: 12px;
-    width: 320px;
+    width: 280px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
     border: 1px solid #e9ecef;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -156,6 +193,41 @@ footer h2 {
     margin-bottom: 15px;
 }
 
-footer p {
-    margin-bottom: 10px;
+.contact-info {
+    margin: 30px 0;
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.contact-info a {
+    color: #00a8cc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: #ffffff;
+}
+
+.linkedin-link {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #0077b5; /* LinkedIn official blue */
+    color: #ffffff !important;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.linkedin-link:hover {
+    background: #005582;
+}
+
+.copyright {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #666;
 }
